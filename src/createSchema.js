@@ -1,11 +1,22 @@
 import { bundle } from 'graphql-modules-fn'
+import createContainer from 'cartola'
 
-import content from './modules/content'
-import user from './modules/user'
-import comment from './modules/comment'
+import tvmazeProvider from './modules/tvmaze/provider'
 
-const modules = [user, comment, content]
+import person from './modules/person'
+import show from './modules/show'
+import episode from './modules/episode'
+import cast from './modules/cast'
+import image from './modules/image'
+import search from './modules/search'
+
+const modules = [person, show, episode, cast, image, search]
+
+const container = createContainer()
+container.define(tvmazeProvider)
+
+const context = { container }
 
 export default function createSchema() {
-  return bundle(modules) //=> { schema, context }
+  return bundle(modules, context)
 }

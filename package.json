@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "@apollographql/apollo-tools": "^0.3.5",
+    "agentkeepalive": "^4.0.2",
     "apollo-server": "^2.4.8",
+    "axios": "^0.18.0",
+    "cartola": "^0.1.0",
     "graphql": "^14.2.1",
     "graphql-modules-fn": "^0.1.0-alpha9",
     "graphql-tag": "^2.10.1"
